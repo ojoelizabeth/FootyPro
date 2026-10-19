@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FootyPro | Football Training</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">⚽ FootyPro</a>
+
+        <nav>
+            <a href="#dashboard">Home</a>
+            <a href="#position-training">Training</a>
+            <a href="#weekly-planner">My Week</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="player-profile" class="content-section">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR FOOTBALL JOURNEY</p>
+            <h2>Player Profile</h2>
+        </div>
+    </div>
+
+    <div class="profile-card">
+
+        <label for="player-name">Your name</label>
+        <input
+            type="text"
+            id="player-name"
+            placeholder="Enter your name"
+        >
+
+        <label for="player-position">Preferred position</label>
+        <select id="player-position">
+            <option value="AMF">Attacking Midfielder</option>
+            <option value="Winger">Winger</option>
+            <option value="Striker">Striker</option>
+            <option value="Defender">Defender</option>
+            <option value="Goalkeeper">Goalkeeper</option>
+        </select>
+
+        <label for="player-level">Experience level</label>
+        <select id="player-level">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+
+        <button
+            type="button"
+            class="primary-button"
+            onclick="saveProfile()"
+        >
+            Save Profile
+        </button>
+
+        <p id="profile-message" aria-live="polite"></p>
+
+    </div>
+
+</section>
+        <section id="dashboard" class="welcome">
+            <p class="eyebrow">YOUR FOOTBALL JOURNEY STARTS HERE</p>
+
+            <h1>Welcome, <span id="dashboard-name">Player</span>!<br>
+            Train smarter. Play better.</h1>
+
+            <p>
+                Build your skills, stay consistent, and work towards
+                becoming a better footballer.
+            </p>
+
+            <a href="#position-training" class="primary-button">
+                Explore Training →
+            </a>
+        </section>
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <span>📅</span>
+                <p>Weekly Sessions</p>
+                <h2>7</h2>
+            </article>
+
+            <article class="stat-card">
+                <span>✅</span>
+                <p>Completed</p>
+                <h2 id="dashboard-completed">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <span>⚽</span>
+                <p>Football Focus</p>
+                <h2>Improve</h2>
+            </article>
+
+        </section>
+
+        <section id="position-training" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PERSONALIZED PRACTICE</p>
+                    <h2>Train for your position</h2>
+                </div>
+            </div>
+
+            <p class="section-description">
+                Choose your position to explore suitable drills.
+            </p>
+
+            <div class="position-grid">
+
+                <button onclick="showPlan('AMF')" class="position-card">
+                    <span>🎯</span>
+                    <strong>Attacking Midfielder</strong>
+                    <small>Vision, passing and creativity</small>
+                </button>
+
+                <button onclick="showPlan('Winger')" class="position-card">
+                    <span>⚡</span>
+                    <strong>Winger</strong>
+                    <small>Dribbling, pace and crossing</small>
+                </button>
+
+                <button onclick="showPlan('Striker')" class="position-card">
+                    <span>🥅</span>
+                    <strong>Striker</strong>
+                    <small>Movement and finishing</small>
+                </button>
+
+                <button onclick="showPlan('Defender')" class="position-card">
+                    <span>🛡️</span>
+                    <strong>Defender</strong>
+                    <small>Positioning and defending</small>
+                </button>
+
+                <button onclick="showPlan('Goalkeeper')" class="position-card">
+                    <span>🧤</span>
+                    <strong>Goalkeeper</strong>
+                    <small>Handling and distribution</small>
+                </button>
+
+            </div>
+
+            <div id="training-plan" class="training-plan"></div>
+
+        </section>
+
+        <section id="weekly-planner" class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">BUILD CONSISTENCY</p>
+                    <h2>Your weekly planner</h2>
+                </div>
+            </div>
+
+            <p class="section-description">
+                Track your sessions and remember to make time for recovery.
+            </p>
+
+            <div id="progress-summary" class="progress-card">
+                <div class="progress-top">
+                    <span>Weekly progress</span>
+                    <strong><span id="completed-count">0</span>/7</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progress-bar" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="weekly-schedule"></div>
+
+            <button onclick="resetProgress()" class="reset-button">
+                Reset Weekly Progress
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>⚽ FootyPro — Your journey to better football starts today.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

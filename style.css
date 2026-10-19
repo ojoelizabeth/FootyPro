@@ -1,0 +1,911 @@
+/* =================================
+   FOOTYPRO — PROFESSIONAL DESIGN
+================================= */
+
+:root {
+    --background: #0b1110;
+    --surface: #141e1b;
+    --surface-light: #1b2923;
+    --green: #39e75f;
+    --green-dark: #20b84a;
+    --text: #f5f7f5;
+    --muted: #a3b0a8;
+    --border: #283a30;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(2, 7, 20, 0.72),
+            rgba(2, 7, 20, 0.82)
+        ),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1920&q=85");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-color: #020711;
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+    background: #101815;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--green);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+    color: var(--green);
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+/* WELCOME SECTION */
+
+.welcome {
+    padding: 65px 45px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background:
+        radial-gradient(
+            circle at top right,
+            #1e4930 0%,
+            #15251d 35%,
+            #121a16 75%
+        );
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.welcome h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.12;
+    margin-bottom: 20px;
+}
+
+.welcome > p:not(.eyebrow) {
+    max-width: 520px;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 9px;
+    background: var(--green);
+    color: #071109;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+    background: #70f58a;
+    transform: translateY(-2px);
+}
+
+/* STATISTICS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 25px 0 50px;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 23px;
+}
+
+.stat-card > span {
+    font-size: 25px;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.stat-card h2 {
+    color: var(--green);
+    font-size: 27px;
+    margin-top: 4px;
+}
+
+/* CONTENT SECTIONS */
+
+.content-section {
+    margin: 45px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-size: clamp(23px, 4vw, 30px);
+}
+
+.section-description {
+    color: var(--muted);
+    margin: 10px 0 25px;
+}
+
+/* POSITION CARDS */
+
+.position-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.position-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+    padding: 22px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+}
+
+.position-card > span {
+    font-size: 30px;
+}
+
+.position-card strong {
+    font-size: 15px;
+}
+
+.position-card small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.position-card:hover {
+    border-color: var(--green);
+    background: var(--surface-light);
+    transform: translateY(-3px);
+}
+
+/* TRAINING PLAN */
+
+.training-plan {
+    margin-top: 25px;
+}
+
+#training-plan:empty {
+    display: none;
+}
+
+#training-plan:not(:empty) {
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--green);
+    border-radius: 15px;
+}
+
+#training-plan h2 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+#training-plan li {
+    margin: 12px 0 12px 20px;
+    color: var(--muted);
+}
+
+/* WEEKLY PROGRESS */
+
+.progress-card {
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.progress-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.progress-top strong {
+    color: var(--green);
+}
+
+.progress-track {
+    width: 100%;
+    height: 9px;
+    background: #2a352f;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--green);
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+/* WEEKLY SESSIONS */
+
+.session-card {
+    padding: 20px;
+    margin: 15px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--green);
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.session-card h3 {
+    color: var(--green);
+    margin-bottom: 5px;
+}
+
+.session-card p {
+    color: var(--muted);
+    margin: 4px 0;
+}
+
+.session-card label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.session-card input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--green);
+}
+
+.reset-button {
+    padding: 12px 18px;
+    margin-top: 10px;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    color: var(--green);
+    border-color: var(--green);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 16px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 25px 16px;
+    }
+
+    .welcome {
+        padding: 38px 24px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .position-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .position-card {
+        padding: 15px;
+    }
+
+    .position-card strong {
+        font-size: 13px;
+    }
+
+    .position-card small {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .navbar nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .position-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Player profile */
+
+.profile-card {
+    display: grid;
+    gap: 12px;
+    max-width: 600px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.profile-card label {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.profile-card input,
+.profile-card select {
+    width: 100%;
+    padding: 13px;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.profile-card input:focus,
+.profile-card select:focus {
+    outline: 1px solid var(--green);
+    border-color: var(--green);
+}
+
+.profile-card .primary-button {
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#profile-message {
+    color: var(--green);
+    margin-top: 5px;
+    font-size: 14px;
+}
+/* ===== FOOTYPRO DASHBOARD UPGRADE ===== */
+
+body {
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    letter-spacing: 0.3px;
+}
+
+section,
+.card,
+.profile-card,
+.dashboard-card {
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Improve buttons */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: 600;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Improve form fields */
+input,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Improve dashboard spacing */
+main {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* Make the app comfortable to use on phones */
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+/* =================================
+   FOOTYPRO PRO DASHBOARD THEME
+   ================================= */
+
+:root {
+    --fp-bg: #03090d;
+    --fp-card: rgba(8, 20, 27, 0.88);
+    --fp-green: #20ff72;
+    --fp-green-dark: #00b94f;
+    --fp-text: #f5f9fc;
+    --fp-muted: #a8bac8;
+    --fp-border: rgba(32, 255, 114, 0.22);
+}
+
+/* Main stadium-inspired background */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--fp-text);
+
+    background-color: #020711;
+
+    background-image:
+        linear-gradient(
+            rgba(2, 7, 20, 0.55),
+            rgba(2, 7, 20, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1920&q=85");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    line-height: 1.6;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3 {
+    color: var(--fp-text);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+/* Dashboard cards */
+
+section,
+.card,
+.profile-card,
+.dashboard-card,
+.stat-card,
+.training-card {
+    background: var(--fp-card);
+    border: 1px solid var(--fp-border);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Subtle green glow when hovering over cards */
+
+section:hover,
+.card:hover,
+.profile-card:hover,
+.dashboard-card:hover,
+.stat-card:hover,
+.training-card:hover {
+    border-color: rgba(32, 255, 114, 0.65);
+
+    box-shadow:
+        0 10px 35px rgba(0, 255, 100, 0.07),
+        0 0 12px rgba(0, 255, 100, 0.04);
+}
+
+/* Buttons */
+
+button {
+    background: linear-gradient(
+        135deg,
+        var(--fp-green),
+        var(--fp-green-dark)
+    );
+
+    color: #021008;
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(32, 255, 114, 0.2);
+    filter: brightness(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Input fields and dropdowns */
+
+input,
+select,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: 12px 14px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+
+    background: #07131a;
+    color: var(--fp-text);
+
+    border: 1px solid #243b43;
+    border-radius: 10px;
+
+    font-size: 16px;
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--fp-green);
+
+    box-shadow:
+        0 0 0 3px rgba(32, 255, 114, 0.09);
+}
+
+/* Labels */
+
+label {
+    color: var(--fp-muted);
+    font-weight: 600;
+}
+
+/* Links */
+
+a {
+    color: var(--fp-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #8dffb3;
+}
+
+/* Lists */
+
+li {
+    margin-bottom: 10px;
+    color: #dce8ee;
+}
+
+/* Progress bars */
+
+progress {
+    width: 100%;
+    height: 12px;
+    accent-color: var(--fp-green);
+}
+
+/* Horizontal dividers */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--fp-border);
+    margin: 22px 0;
+}
+
+/* Selection colour */
+
+::selection {
+    background: var(--fp-green);
+    color: #021008;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #03090d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #17633b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fp-green-dark);
+}
+
+/* Responsive design for phones */
+
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    section,
+    .card,
+    .profile-card,
+    .dashboard-card,
+    .stat-card,
+    .training-card {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+/* ===== FOOTYPRO PREMIUM GLASS EFFECT ===== */
+
+section,
+.card,
+.profile-card,
+.dashboard-card,
+.stat-card,
+.training-card {
+    background: rgba(3, 12, 25, 0.82) !important;
+
+    border: 1px solid rgba(32, 255, 114, 0.35);
+    border-radius: 18px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Green glow on hover */
+
+section:hover,
+.card:hover,
+.profile-card:hover,
+.dashboard-card:hover,
+.stat-card:hover,
+.training-card:hover {
+    border-color: #20ff72;
+
+    box-shadow:
+        0 0 18px rgba(32, 255, 114, 0.12),
+        0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Neon-green headings and highlights */
+
+.highlight,
+.accent,
+.stat-number {
+    color: #20ff72;
+}
+
+/* Premium buttons */
+
+button {
+    box-shadow: 0 4px 15px rgba(32, 255, 114, 0.12);
+}
+
+button:hover {
+    box-shadow: 0 0 22px rgba(32, 255, 114, 0.3);
+}
+
+/* Smooth page scrolling */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Keep cards readable on smaller screens */
+
+@media (max-width: 600px) {
+    section,
+    .card,
+    .profile-card,
+    .dashboard-card,
+    .stat-card,
+    .training-card {
+        border-radius: 14px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
